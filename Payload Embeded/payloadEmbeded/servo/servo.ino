@@ -1,24 +1,35 @@
 #include <Servo.h>
 
-Servo myservo;  // Bir servoyu kontrol etmek için servo nesnesi oluşturmak
-int pos = 0;    // servo konumunu saklamak için değişken
+Servo servoEngine;  // Bir servoyu kontrol etmek için servo nesnesi oluşturmak
+int count;
+int destination=60;
+bool isServo= false;
 
 void setup() 
 {
-  myservo.attach(9);  // 9 no'lu pini servo nesnesine tutturur
+  servoEngine.attach(9);  // 9 no'lu pini servo nesnesine tutturur
+  Serial.begin(9600);
+  count = 0;
 }
 
 void loop() 
 {
-  for (pos = 0; pos <= 180; pos += 1) { // 0 dereceden 180 dereceye kadar gider
-                                        // her adım 1 derece
-    myservo.write(pos);                 // servo'ya 'pos' değişkeninde pozisyona gitmesini söyle
-    delay(15);                       
+  if(isServo==false)
+  {
+    moveServo(0,120);  
+    isServo=true;
   }
-  
-  for (pos = 180; pos >= 0; pos -= 1)   //  180 dereceden 0 dereceye kadar gider
-  { 
-    myservo.write(pos);                 // servo'ya 'pos' değişkeninde pozisyona gitmesini söyle
-    delay(15);                      
+  else
+  {
+    Serial.println("Servo Okey");
+    servoEngine.detach();
   }
 }
+
+  void moveServo(int pos, int destination)
+  {
+    for (count=0; count < destination; count++)
+      {
+        servoEngine.write(destination);
+      }
+  }
