@@ -1,7 +1,7 @@
 # cansat-payload-embeded
 2019 CanSat Competition - Payload Electronic Circuit Arduino Code (For Ardunio Nano)
 
-ADXL345, BME280 and RTC use I2C for communication.
+ADXL345, BME280 and RTC use I2C for communication.  
 SD Card Adapter use SPI for communication.  
 Servo Engine, RGB Led and Buzzer requires digital signal to work. 
 
