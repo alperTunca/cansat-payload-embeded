@@ -3,8 +3,7 @@
 
 ADXL345, BME280 and RTC use I2C for communication.
 SD Card Adapter use SPI for communication.  
-RGB Led requires PWM signal to work.  
-Servo Engine and Buzzer requires digital signal to work. 
+Servo Engine, RGB Led and Buzzer requires digital signal to work. 
 
 Pin assignments for each sensor: (Each sensor uses common GND.)  
 
@@ -24,15 +23,15 @@ Pin assignments for each sensor: (Each sensor uses common GND.)
   + Digital --> D2   
         
 * **Servo En.**
-  + Digital --> D10   
+  + Digital --> D7   
 
 * **RGB Led**
-  + Red --> D6  
-  + Green --> D9  
-  + Blue --> D10 
+  + Red --> D3  
+  + Green --> D6  
+  + Blue --> D9 
   
 * **SD Card A.**
   + CS --> D4
-  + SCK --> D10
+  + SCK --> D13
   + MOSI --> D11
   + MISO --> D12
