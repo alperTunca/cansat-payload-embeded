@@ -1,12 +1,12 @@
 # cansat-payload-embeded
 2019 CanSat Competition - Payload Electronic Circuit Arduino Code (For Ardunio Nano)
 
-ADXL345, BME280 and RTC use I2C for communication.  
+ADXL345, BME280 and RTC use I2C for communication.
 SD Card Adapter use SPI for communication.  
 RGB Led requires PWM signal to work.  
 Servo Engine and Buzzer requires digital signal to work. 
 
-Pin assignments for each sensor: (Each sensor uses common 5V and GND.)  
+Pin assignments for each sensor: (Each sensor uses common GND.)  
 
 * **ADXL345**
   + SDA --> A4
@@ -32,6 +32,7 @@ Pin assignments for each sensor: (Each sensor uses common 5V and GND.)
   + Blue --> D10 
   
 * **SD Card A.**
-  + CS --> D4  
+  + CS --> D4
+  + SCK --> D10
   + MOSI --> D11
   + MISO --> D12
