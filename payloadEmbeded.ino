@@ -84,9 +84,9 @@ void setup() {
     xBee.println(F("SDCard Error."));
   }
 
-
+//Power failıre is not required for this competition.
   // If there is a file named power_1.txt in the SD card, a power failure has occurred.
-  file = SD.open(F("power_1.txt"), FILE_READ);
+/*  file = SD.open(F("power_1.txt"), FILE_READ);
   if(file)
   {
     xBee.println(F("Detect power failure."));
@@ -113,6 +113,8 @@ void setup() {
     xBee.println(F("Normal start")); 
     file.close();  
   }
+*/
+
 
    // A file named power_1.txt is being created after reading the power failure status. 
    // This file will be deleted when the Stop command is received. 
