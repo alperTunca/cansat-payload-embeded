@@ -68,15 +68,16 @@ void setup() {
   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 
   acc_sensor.initialize();
-  xBee.println(acc_sensor.testConnection() ? "MPU6050 success" : "MPU6050 failed");
+  xBee.println(acc_sensor.testConnection() ? F("MPU6050 success") :F("MPU6050 failed"));
   xBee.println(F("BME is starting..."));
   
-  while (!bme.begin())
-  {
-    delay(500);
-    xBee.println(F("BME Error."));
-  }
-  
+  // Free some space on the flash memory
+  //while (!bme.begin())
+  //{
+  //  delay(500);
+  //  xBee.println(F("BME Error."));
+ // }
+  bme.begin()
   
   if (!SD.begin(4)) {
     while (1);
